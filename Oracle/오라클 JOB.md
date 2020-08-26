@@ -2,8 +2,7 @@
 
 ### 프로시저 구성
 
-* SUBMIT : DB에 새로운 JOB을 추가하는 프로시저
-
+1. SUBMIT : DB에 새로운 JOB을 추가하는 프로시저
 2. REMOVE : DB에 추가된 JOB을 삭제하는 프로시저 
 3. CHANGE : DB에 저장되어 있는 JOB의 field들을 변경하는 프로시저
 4. WHAT : JOB이 수행하는 작업을 변경하는 프로시저
