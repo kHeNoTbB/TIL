@@ -15,7 +15,7 @@
 
 BEGIN
 
-​	DBMS_JOB.CHANGE ();
+	DBMS_JOB.CHANGE ();
 
 END;
 
@@ -45,22 +45,42 @@ COMMIT;
 
 BEGIN
 
-​	DBMS_JOB.CHANGE (
-
-​	  job => 1,
-
-​	  what => ~~~,
-
-​	  next_date => ~~~,
-
-​	  interval => ~~~,
-
-​	  instance => 0,
-
-​	  force => FALSE
-
-​	);
+	DBMS_JOB.CHANGE (
+	
+	  job => 1,
+	
+	  what => ~~~,
+	
+	  next_date => ~~~,
+	
+	  interval => ~~~,
+	
+	  instance => 0,
+	
+	  force => FALSE
+	
+	);
 
 END;
 
 COMMIT;
+
+
+
+### PROCEDURE WITH ORANGE
+
+PL/SQL 내 프로시저 작성 후 컴파일(F5) > SUCCESSFUL 뜨면 끝
+
+*FOR LOOP 작성 공부 필요할 듯*
+
+
+
+### JOB WITH ORANGE
+
+JOB > 스키마 선택 > SUBMIT JOB >
+
+WHAT ? OBJECT NAME = 프로시저 이름
+
+NEXT DATE ? SYSDATE
+
+INTERVAL - Expression = TRUNC(SYSDATE,'MI') + 1/144  //매일 10분간격 (EVERY DAY 10 MIN)
