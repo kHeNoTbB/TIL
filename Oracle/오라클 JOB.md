@@ -11,15 +11,15 @@
 7. BROKEN  : DB에 저장되어 있는 JOB의 상태를 정상 or Broken 상태로 설정하는 프로시저
 8. RUN : JOB을 현재 시점에서 즉시 수행시키는 프로시저
 
-(예시)
-
-BEGIN
-
-	DBMS_JOB.CHANGE ();
-
+```
+BEGIN(
+ ...
+)	
 END;
-
 COMMIT;
+```
+
+
 
 
 
@@ -43,27 +43,21 @@ COMMIT;
 
 ### 예시
 
+```
 BEGIN
-
 	DBMS_JOB.CHANGE (
-	
 	  job => 1,
-	
 	  what => ~~~,
-	
 	  next_date => ~~~,
-	
 	  interval => ~~~,
-	
 	  instance => 0,
-	
 	  force => FALSE
-	
 	);
-
 END;
-
 COMMIT;
+```
+
+
 
 
 
@@ -83,4 +77,4 @@ WHAT ? OBJECT NAME = 프로시저 이름
 
 NEXT DATE ? SYSDATE
 
-INTERVAL - Expression = TRUNC(SYSDATE,'MI') + 1/144  //매일 10분간격 (EVERY DAY 10 MIN) 
+INTERVAL - Expression = TRUNC(SYSDATE,'MI') + 1/144  //매일 10분간격 (EVERY DAY 10 MIN)
