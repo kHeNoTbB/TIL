@@ -83,4 +83,4 @@ WHAT ? OBJECT NAME = 프로시저 이름
 
 NEXT DATE ? SYSDATE
 
-INTERVAL - Expression = TRUNC(SYSDATE,'MI') + 1/144  //매일 10분간격 (EVERY DAY 10 MIN)
+INTERVAL - Expression = TRUNC(SYSDATE,'MI') + 1/144  //매일 10분간격 (EVERY DAY 10 MIN) 
