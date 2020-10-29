@@ -32,13 +32,11 @@ BEGIN
                     UPDATE ____________;
                     COMMIT;
                     RETURN_V := '_____';
-              EXCEPTION WHEN OTHERS THEN ___
-                        ROLLBACK;
-              END; --BEGIN END
+                    
+                    EXCEPTION WHEN OTHERS THEN ___
+                    ROLLBACK;
+               END; --BEGIN END
          END IF;
    END IF;
-   
    RETURN_O := RETURN_V;
 END;
-              
-  
