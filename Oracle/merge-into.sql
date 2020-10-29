@@ -13,8 +13,10 @@ ON 조건(ex. A.NAME = 'git' AND A.AGE = '27')
 WHEN MATCHED THEN C
 WHEN NOT MATCHED THEN D
 
-단, 주의 할 점은 ON 뒤 조건은 PK를 사용해야 
-그렇지 않으면 입력 시, 중복이 발생하여 에러가 날 수 있음
+[주의사항]
+* ON 뒤 조건은 PK를 사용해야 함. 그렇지 않으면 입력 시 중복이 발생하여 에러가 날 수 있음
+* ON 조건절에 사용된 컬럼은 UPDATE가 불가능함
+* 웬만하면 오라클 10g 부터 사용하자
 ***********************************************************************************/
 CREATE OR REPLACE PROCEDURE DB스키마.프로시저이름 IS
   DATE_V    VARCHAR2(8);
