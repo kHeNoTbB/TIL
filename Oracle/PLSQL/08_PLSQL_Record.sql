@@ -12,4 +12,31 @@ TYPE record_example IS RECORD
   );
 **********************************************************************************/
 
-CREATE OR REPLACE PROCEDURE 
+CREATE OR REPLACE PROCEDURE record_example
+ ( p_empno IN emp.empno%TYPE )
+IS
+ TYPE emp_record IS RECORD
+ ( v_empno    NUMBER,
+   v_ename    VARCHAR2(30),
+   v_hiredate DATE
+ );
+ 
+ -- emp_record라는 record 타입으로 emp_rec 변수를 선언하여 사용
+ emp_rec emp_record;
+BEGIN
+ DBMS_OUTPUT.ENABLE;
+ 
+ SELECT empno, ename, hiredate
+ INTO emp_rec.v_empno, emp_rec.v_ename, emp_rec.v_hiredate
+ FROM emp
+ WHERE eMpno = p_empno;
+ 
+ DBMS_OUTPUT.PUT_LINE( '사원번호 : ' || emp_rec.v_empno );
+ DBMS_OUTPUT.PUT_LINE( '사원이름 : ' || emp_rec.v_ename );
+ DBMS_OUTPUT.PUT_LINE( '입 사 일 : ' || emp_rec.v_hiredate);
+END;
+
+
+SET SERVEROUTPUT ON;
+EXECUTE record_example(7369);
+ 
